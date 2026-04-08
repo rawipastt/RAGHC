@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAGHC Portal | Ramathibodi Global Health</title>
+    <title>RAGHC | Ramathibodi Global Health Studies Club</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,240 +14,193 @@
         .unit-card:hover { transform: translateY(-12px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
         .member-avatar { border: 3px solid white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); transition: transform 0.3s; }
         .member-avatar:hover { transform: scale(1.1); z-index: 10; }
-        .meeting-btn { animation: pulse 2s infinite; }
+        .status-badge { padding: 2px 8px; border-radius: 6px; font-size: 9px; font-weight: 700; text-transform: uppercase; }
+        .meeting-pulse { animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); } }
     </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-900 leading-relaxed">
+<body class="bg-[#f8fafc] text-slate-900">
 
-    <div class="bg-slate-900 text-white py-2 px-6">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-            <div class="flex items-center gap-2"><i class="fas fa-users text-blue-400"></i> Next Assembly: <span class="text-blue-400">20 APR</span></div>
-            <div class="flex items-center gap-2"><i class="fas fa-clipboard-list text-emerald-400"></i> Next Board: <span class="text-emerald-400">15 APR</span></div>
-            <div class="flex items-center gap-2"><i class="fas fa-user-tie text-rose-400"></i> Next Advisor: <span class="text-rose-400">25 APR</span></div>
-        </div>
+    <div class="bg-slate-900 text-white py-2 px-6 text-[10px] md:text-xs font-bold uppercase tracking-widest text-center flex flex-wrap justify-center gap-6">
+        <span><i class="fas fa-users text-blue-400 mr-2"></i>Next Assembly: 20 APR</span>
+        <span><i class="fas fa-clipboard-list text-emerald-400 mr-2"></i>Next Board: 15 APR</span>
+        <span><i class="fas fa-user-tie text-rose-400 mr-2"></i>Next Advisor: 25 APR</span>
     </div>
 
-    <div class="bg-blue-50 border-b border-blue-100 py-3 px-6">
+    <div class="bg-blue-600 text-white py-4 px-6 shadow-xl">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <span class="relative flex h-3 w-3">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-                </span>
-                <span class="text-sm font-bold text-blue-900">Current/Next Meeting: <span class="font-normal underline">Board Meeting #1</span></span>
+            <div class="flex items-center gap-4">
+                <div class="bg-white/20 p-2 rounded-lg meeting-pulse"><i class="fas fa-headset text-xl"></i></div>
+                <div>
+                    <h4 class="font-bold text-sm leading-tight">Meeting Command Center</h4>
+                    <p class="text-[10px] opacity-80 uppercase tracking-tighter">เข้าประชุมและดูบันทึกย้อนหลังได้ที่นี่</p>
+                </div>
             </div>
-            <div class="flex gap-4">
-                <a href="URL_ZOOM_OR_TEAMS" class="meeting-btn bg-blue-600 text-white px-5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-blue-700 transition">
-                    <i class="fas fa-video"></i> Join Meeting
+            <div class="flex flex-wrap gap-2">
+                <a href="URL_LINK_ประชุม" class="bg-white text-blue-600 px-6 py-2 rounded-full text-[11px] font-bold hover:bg-blue-50 transition">
+                    <i class="fas fa-video mr-1"></i> เข้าห้องประชุม (Live)
                 </a>
-                <a href="URL_MEETING_MINUTES" class="bg-white text-blue-600 border border-blue-200 px-5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-blue-50 transition">
-                    <i class="fas fa-file-signature"></i> Meeting Minutes (จดประชุม)
+                <a href="URL_DRIVE_จดประชุม" class="bg-blue-800 text-white px-6 py-2 rounded-full text-[11px] font-bold hover:bg-blue-900 transition border border-white/20">
+                    <i class="fas fa-folder-open mr-1"></i> Meeting Drive (จดประชุม)
                 </a>
             </div>
         </div>
     </div>
 
-    <nav class="glass-nav border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3 group">
-                <div class="bg-blue-600 p-2 rounded-xl group-hover:rotate-12 transition-transform shadow-lg shadow-blue-200">
-                    <i class="fas fa-hand-holding-heart text-white text-xl"></i>
-                </div>
+    <nav class="glass-nav border-b border-slate-200 sticky top-0 z-50 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-xl text-white shadow-lg shadow-blue-200"><i class="fas fa-heartbeat text-xl"></i></div>
                 <div>
-                    <span class="font-bold text-2xl tracking-tighter block leading-none text-blue-900 italic">RAGHC</span>
-                    <span class="text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold">Ramathibodi • Since 2025</span>
+                    <span class="font-bold text-2xl tracking-tighter block leading-none italic">RAGHC</span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold">Since 2025</span>
                 </div>
             </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+            <div class="hidden md:flex gap-8 text-xs font-bold uppercase text-slate-500 tracking-widest">
                 <a href="#units" class="hover:text-blue-600 transition">Units</a>
-                <a href="#tracking" class="hover:text-blue-600 transition">Tasks</a>
                 <a href="#external" class="hover:text-blue-600 transition">External/PR</a>
-                <a href="#members" class="hover:text-blue-600 transition">Members</a>
+                <a href="#members" class="hover:text-blue-600 transition">Team</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative overflow-hidden pt-16 pb-20 px-6 bg-white border-b border-slate-50">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900">
-                Ramathibodi Global Health<br/><span class="text-blue-600 italic">Studies Club</span>
-            </h1>
-            <p class="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-4">
-                "Empowering students through a global health community."
-            </p>
-            <p class="text-slate-400 text-sm font-medium">ชมรมสุขภาพโลกไร้พรหมแดน คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี</p>
-        </div>
+    <header class="bg-white pt-16 pb-12 px-6 text-center border-b border-slate-50">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Ramathibodi Global Health <span class="text-blue-600 italic">Studies Club</span></h1>
+        <p class="text-slate-500 text-lg italic max-w-2xl mx-auto">"Empowering students through a global health community."</p>
+        <p class="text-slate-400 text-xs mt-2 uppercase font-bold tracking-[0.2em]">ชมรมสุขภาพโลกไร้พรหมแดน คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี</p>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 pb-24 space-y-24">
+    <main class="max-w-7xl mx-auto px-6 py-16 space-y-24">
         
-        <section id="units" class="pt-12">
-            <div class="mb-12 flex justify-between items-end">
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Specialized Units</h2>
-                    <div class="h-1.5 w-20 bg-blue-600 rounded-full"></div>
-                </div>
-            </div>
-            
+        <section id="units">
+            <h2 class="text-2xl font-black mb-10 border-l-8 border-blue-600 pl-4 uppercase tracking-tighter">Specialized Units</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="unit-card bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden flex flex-col">
                     <div class="absolute -right-4 -top-4 opacity-10 text-6xl rotate-12"><i class="fas fa-award"></i></div>
-                    <h4 class="font-bold text-xl mb-1 italic">PMAC 2026</h4>
-                    <p class="text-[10px] text-blue-300 uppercase font-bold tracking-widest mb-8">Youth Program & Staff Selection</p>
-                    <div class="mt-auto space-y-2">
-                        <a href="#" class="block w-full py-2.5 bg-white/10 text-white rounded-xl text-[10px] font-bold text-center border border-white/20 hover:bg-white/20 transition tracking-widest uppercase italic">Task Progress</a>
-                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-lg shadow-blue-900/50 tracking-widest uppercase italic">Unit Drive</a>
+                    <h4 class="font-bold text-xl italic mb-1">PMAC 2026</h4>
+                    <p class="text-[10px] text-blue-300 font-bold tracking-widest mb-10">Prince Mahidol Award Conference</p>
+                    <div class="mt-auto grid grid-cols-2 gap-3">
+                        <a href="#" class="py-2.5 bg-white/10 rounded-xl text-[9px] font-bold text-center border border-white/20 hover:bg-white/20 tracking-widest italic">TASKS</a>
+                        <a href="#" class="py-2.5 bg-blue-600 rounded-xl text-[9px] font-bold text-center hover:bg-blue-700 shadow-lg shadow-blue-900/50 tracking-widest italic uppercase">Drive</a>
                     </div>
                 </div>
 
                 <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
                     <div class="w-12 h-12 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-map-location-dot"></i></div>
-                    <h4 class="font-bold text-xl mb-1 text-slate-800 italic">Border Health</h4>
-                    <p class="text-xs text-slate-400 mb-8">Literacy & Fieldwork Operations</p>
-                    <div class="mt-auto space-y-2">
-                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase italic">Task Progress</a>
-                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase italic">Unit Drive</a>
+                    <h4 class="font-bold text-xl italic text-slate-800">Border Health</h4>
+                    <p class="text-xs text-slate-400 mb-10 leading-relaxed">งานลงพื้นที่ และ Literacy Operations</p>
+                    <div class="mt-auto grid grid-cols-2 gap-3 text-center uppercase">
+                        <a href="#" class="py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[9px] font-bold border border-slate-100 hover:bg-slate-100 tracking-widest italic">TASKS</a>
+                        <a href="#" class="py-2.5 bg-blue-600 text-white rounded-xl text-[9px] font-bold hover:bg-blue-700 shadow-md shadow-blue-100 tracking-widest italic">Drive</a>
                     </div>
                 </div>
 
                 <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
                     <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-graduation-cap"></i></div>
-                    <h4 class="font-bold text-xl mb-1 text-slate-800 italic">GH Education</h4>
-                    <p class="text-xs text-slate-400 mb-8">Academic Network & Curriculum</p>
-                    <div class="mt-auto space-y-2">
-                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase italic">Task Progress</a>
-                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase italic">Unit Drive</a>
+                    <h4 class="font-bold text-xl italic text-slate-800 italic">GH Education</h4>
+                    <p class="text-xs text-slate-400 mb-10 leading-relaxed">เครือข่ายอาจารย์ และ GH Curriculum</p>
+                    <div class="mt-auto grid grid-cols-2 gap-3 text-center uppercase">
+                        <a href="#" class="py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[9px] font-bold border border-slate-100 hover:bg-slate-100 tracking-widest italic">TASKS</a>
+                        <a href="#" class="py-2.5 bg-blue-600 text-white rounded-xl text-[9px] font-bold hover:bg-blue-700 shadow-md shadow-blue-100 tracking-widest italic">Drive</a>
                     </div>
                 </div>
 
                 <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
                     <div class="w-12 h-12 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-leaf"></i></div>
-                    <h4 class="font-bold text-xl mb-1 text-slate-800 italic">Planetary Health</h4>
-                    <p class="text-xs text-slate-400 mb-8">Waste Management & Sustainability</p>
-                    <div class="mt-auto space-y-2">
-                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase italic">Task Progress</a>
-                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase italic">Unit Drive</a>
+                    <h4 class="font-bold text-xl italic text-slate-800 italic">Planetary Health</h4>
+                    <p class="text-xs text-slate-400 mb-10 leading-relaxed">Hospital Waste & Sustainability</p>
+                    <div class="mt-auto grid grid-cols-2 gap-3 text-center uppercase">
+                        <a href="#" class="py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[9px] font-bold border border-slate-100 hover:bg-slate-100 tracking-widest italic">TASKS</a>
+                        <a href="#" class="py-2.5 bg-blue-600 text-white rounded-xl text-[9px] font-bold hover:bg-blue-700 shadow-md shadow-blue-100 tracking-widest italic">Drive</a>
                     </div>
                 </div>
 
                 <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
                     <div class="w-12 h-12 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-trophy"></i></div>
-                    <h4 class="font-bold text-xl mb-1 text-slate-800 italic">Case & Compe</h4>
-                    <p class="text-xs text-slate-400 mb-8">Mindset Training & Workshop</p>
-                    <div class="mt-auto space-y-2">
-                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase italic">Task Progress</a>
-                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase italic">Unit Drive</a>
+                    <h4 class="font-bold text-xl italic text-slate-800 italic">Case & Compe</h4>
+                    <p class="text-xs text-slate-400 mb-10 leading-relaxed">GH Mindset & Workshops</p>
+                    <div class="mt-auto grid grid-cols-2 gap-3 text-center uppercase">
+                        <a href="#" class="py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[9px] font-bold border border-slate-100 hover:bg-slate-100 tracking-widest italic">TASKS</a>
+                        <a href="#" class="py-2.5 bg-blue-600 text-white rounded-xl text-[9px] font-bold hover:bg-blue-700 shadow-md shadow-blue-100 tracking-widest italic">Drive</a>
                     </div>
                 </div>
 
                 <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
                     <div class="w-12 h-12 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-microscope"></i></div>
-                    <h4 class="font-bold text-xl mb-1 text-slate-800 italic text-center italic">Research</h4>
-                    <p class="text-xs text-slate-400 mb-8">Global Health Education Research</p>
-                    <div class="mt-auto space-y-2">
-                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase italic">Task Progress</a>
-                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase italic">Unit Drive</a>
+                    <h4 class="font-bold text-xl italic text-slate-800 italic">Research</h4>
+                    <p class="text-xs text-slate-400 mb-10 leading-relaxed">Education Research & Data Hub</p>
+                    <div class="mt-auto grid grid-cols-2 gap-3 text-center uppercase">
+                        <a href="#" class="py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[9px] font-bold border border-slate-100 hover:bg-slate-100 tracking-widest italic">TASKS</a>
+                        <a href="#" class="py-2.5 bg-blue-600 text-white rounded-xl text-[9px] font-bold hover:bg-blue-700 shadow-md shadow-blue-100 tracking-widest italic">Drive</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="tracking" class="pt-12">
-            <h2 class="text-2xl font-bold mb-8 italic">Internal Task Flow</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-slate-100 p-6 rounded-[2rem]">
-                    <div class="flex items-center gap-2 mb-4 px-2 font-bold text-[10px] uppercase text-slate-400 tracking-widest"><div class="w-2 h-2 bg-rose-500 rounded-full"></div> To Do</div>
-                    <div class="space-y-3">
-                        <div class="bg-white p-4 rounded-xl shadow-sm text-sm font-medium border border-slate-200">เตรียมสไลด์ Assembly #1</div>
-                        <div class="bg-white p-4 rounded-xl shadow-sm text-sm font-medium border border-slate-200">อัปเดตสมาชิกชมรมในระบบ</div>
-                    </div>
-                </div>
-                <div class="bg-slate-100 p-6 rounded-[2rem]">
-                    <div class="flex items-center gap-2 mb-4 px-2 font-bold text-[10px] uppercase text-slate-400 tracking-widest"><div class="w-2 h-2 bg-amber-500 rounded-full"></div> In Progress</div>
-                    <div class="space-y-3">
-                        <div class="bg-white p-4 rounded-xl shadow-sm text-sm font-medium border border-slate-200">คัดเลือก Staff PMAC</div>
-                    </div>
-                </div>
-                <div class="bg-slate-100 p-6 rounded-[2rem]">
-                    <div class="flex items-center gap-2 mb-4 px-2 font-bold text-[10px] uppercase text-slate-400 tracking-widest"><div class="w-2 h-2 bg-emerald-500 rounded-full"></div> Done</div>
-                    <div class="space-y-3">
-                        <div class="bg-white p-4 rounded-xl shadow-sm text-sm font-medium border border-slate-200 opacity-50 line-through">สร้างเว็บ Portal Club</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="external" class="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-12">
-            <div class="bg-white p-8 rounded-[3rem] border border-slate-100 shadow-sm relative overflow-hidden">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-blue-200"><i class="fas fa-handshake"></i></div>
+        <section id="external" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm relative overflow-hidden">
+                <div class="flex items-center gap-5 mb-10">
+                    <div class="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg"><i class="fas fa-id-badge"></i></div>
                     <div>
-                        <h3 class="font-bold text-2xl">External CRM</h3>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">Partner & Sponsor Database</p>
+                        <h3 class="font-bold text-2xl tracking-tighter">External CRM</h3>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Partner Database Management</p>
                     </div>
                 </div>
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                        <span class="text-sm font-bold">Current Partners</span>
-                        <span class="text-blue-600 font-bold">12 Organizations</span>
+                <div class="space-y-4 mb-10">
+                    <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                        <span class="text-sm font-semibold">Active Partners</span>
+                        <span class="status-badge bg-blue-100 text-blue-600">12 Organizations</span>
                     </div>
-                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                        <span class="text-sm font-bold">Active Sponsors</span>
-                        <span class="text-emerald-500 font-bold">฿ 45,000 Total</span>
+                    <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                        <span class="text-sm font-semibold">Sponsorship Status</span>
+                        <span class="status-badge bg-emerald-100 text-emerald-600 italic font-bold">฿ 45k Secured</span>
                     </div>
                 </div>
-                <a href="URL_CRM_SHEET" class="block w-full py-4 bg-slate-900 text-white rounded-2xl text-[10px] font-bold tracking-widest uppercase text-center hover:bg-slate-800 transition">Access Database</a>
+                <a href="URL_CRM_DATABASE" class="block w-full py-4 bg-slate-900 text-white rounded-2xl text-[10px] font-bold tracking-widest uppercase text-center hover:bg-slate-800 shadow-xl transition italic">Access CRM Spreadsheet</a>
             </div>
 
-            <div class="bg-slate-50 p-8 rounded-[3rem] border border-slate-200">
-                <h3 class="font-bold text-xl mb-6 flex items-center gap-3"><i class="fas fa-paint-brush text-blue-600"></i> PR Branding Kit</h3>
-                <div class="grid grid-cols-2 gap-4 mb-8">
-                    <a href="#" class="p-6 bg-white rounded-3xl border border-slate-100 flex flex-col items-center gap-3 hover:border-blue-400 transition group">
-                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="fas fa-image"></i></div>
-                        <span class="text-[10px] font-bold uppercase tracking-tighter">Official Logos</span>
-                    </a>
-                    <a href="#" class="p-6 bg-white rounded-3xl border border-slate-100 flex flex-col items-center gap-3 hover:border-blue-400 transition group">
-                        <div class="w-10 h-10 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="fas fa-palette"></i></div>
-                        <span class="text-[10px] font-bold uppercase tracking-tighter">Color Codes</span>
+            <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-200">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="font-bold text-xl italic"><i class="fas fa-bullhorn text-blue-600 mr-2"></i>PR Command</h3>
+                    <a href="URL_REQUEST_PR" class="bg-rose-500 text-white px-4 py-2 rounded-xl text-[10px] font-bold shadow-lg shadow-rose-200 animate-bounce">
+                        <i class="fas fa-plus mr-1"></i> Request PR (ขอสื่อ/โพสต์)
                     </a>
                 </div>
-                <div class="bg-white p-6 rounded-3xl border border-slate-100">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">PR Performance</span>
-                        <span class="text-[10px] font-bold text-emerald-500">+12% Reach</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <div class="bg-blue-600 h-full w-[75%]"></div>
-                    </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="URL_SLIDE_TEMPLATE" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-400 transition group">
+                        <i class="fas fa-file-powerpoint text-amber-500 text-2xl mb-3"></i>
+                        <span class="block text-xs font-bold uppercase tracking-tight">Slide Templates</span>
+                        <span class="text-[9px] text-slate-400 italic">v2025 Official Design</span>
+                    </a>
+                    <a href="URL_LOGO_SYSTEM" class="p-6 bg-white rounded-3xl border border-slate-200 hover:border-blue-400 transition group">
+                        <i class="fas fa-vector-square text-blue-600 text-2xl mb-3"></i>
+                        <span class="block text-xs font-bold uppercase tracking-tight">Official Logos</span>
+                        <span class="text-[9px] text-slate-400 italic">PNG/SVG/White-Version</span>
+                    </a>
                 </div>
             </div>
         </section>
 
         <section id="members" class="bg-white rounded-[3rem] p-12 border border-slate-100 shadow-sm overflow-hidden">
-            <h2 class="text-3xl font-bold text-slate-900 mb-2 italic text-center italic">Member Spotlight</h2>
-            <p class="text-slate-400 text-[10px] uppercase tracking-[0.3em] font-bold text-center mb-12">The RAGHC Leadership Team</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-2 italic text-center">Team Directory</h2>
+            <p class="text-slate-400 text-[10px] uppercase tracking-[0.3em] font-bold text-center mb-12">RAGHC Leadership 2025-2026</p>
             
-            <div class="flex overflow-x-auto gap-12 pb-6 scrollbar-hide">
-                <div class="flex-none w-48 text-center">
-                    <img src="https://ui-avatars.com/api/?name=President&background=1E40AF&color=fff&size=200" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-                    <h5 class="font-bold text-slate-800">ชื่อ-นามสกุล</h5>
+            <div class="flex overflow-x-auto gap-12 pb-6 scrollbar-hide justify-center">
+                <div class="flex-none w-44 text-center">
+                    <img src="https://ui-avatars.com/api/?name=President&background=1E40AF&color=fff&size=150" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold text-slate-800 text-sm">ชื่อ-นามสกุล</h5>
                     <p class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">President</p>
                 </div>
-                <div class="flex-none w-48 text-center">
-                    <img src="https://ui-avatars.com/api/?name=Secretary&background=random&size=200" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-                    <h5 class="font-bold text-slate-800">ชื่อ-นามสกุล</h5>
-                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Secretary</p>
-                </div>
-                <div class="flex-none w-48 text-center">
-                    <img src="https://ui-avatars.com/api/?name=External&background=random&size=200" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-                    <h5 class="font-bold text-slate-800">ชื่อ-นามสกุล</h5>
+                <div class="flex-none w-44 text-center">
+                    <img src="https://ui-avatars.com/api/?name=External&background=random&size=150" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold text-slate-800 text-sm">ชื่อ-นามสกุล</h5>
                     <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">External Lead</p>
                 </div>
-                <div class="flex-none w-48 text-center">
-                    <img src="https://ui-avatars.com/api/?name=PR+Lead&background=random&size=200" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-                    <h5 class="font-bold text-slate-800">ชื่อ-นามสกุล</h5>
-                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">PR Lead</p>
+                <div class="flex-none w-44 text-center">
+                    <img src="https://ui-avatars.com/api/?name=PR&background=random&size=150" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold text-slate-800 text-sm">ชื่อ-นามสกุล</h5>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">PR/Branding Lead</p>
                 </div>
             </div>
         </section>
