@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Latest Website 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Modern CSS Reset & General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        /* Content Section */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* ซ่อนเมนูในมือถือเพื่อความง่าย */
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MY WEBSITE</div>
+        <ul>
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">เกี่ยวกับเรา</a></li>
+            <li><a href="#">บริการ</a></li>
+            <li><a href="#">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>ยินดีต้อนรับสู่เว็บไซต์เวอร์ชันใหม่</h1>
+        <p>อัปเดตล่าสุดด้วยการออกแบบที่ทันสมัยและรองรับทุกอุปกรณ์</p>
+        <a href="#start" class="btn">เริ่มต้นใช้งาน</a>
+    </header>
+
+    <main class="container" id="start">
+        <div class="card">
+            <h3>ดีไซน์ใหม่</h3>
+            <p>สะอาดตา ใช้งานง่าย และเน้นความสวยงามแบบ Minimalist</p>
+        </div>
+        <div class="card">
+            <h3>ความเร็วสูง</h3>
+            <p>ปรับแต่งโค้ดให้เบาและโหลดหน้าเว็บได้รวดเร็วยิ่งขึ้น</p>
+        </div>
+        <div class="card">
+            <h3>รองรับมือถือ</h3>
+            <p>หน้าเว็บปรับขนาดตามหน้าจออัตโนมัติ (Responsive Design)</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My New Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // ใส่คำสั่ง JavaScript เพิ่มเติมที่นี่
+        console.log("หน้าเว็บอัปเดตล่าสุดพร้อมใช้งาน!");
+    </script>
+</body>
+</html>
