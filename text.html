@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAGHC Hub - Fixed Design</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* CSS ชุดกู้ชีพ: ต่อให้ Tailwind ไม่โหลด ชุดนี้จะบังคับให้มันสวยครับ */
+        body { font-family: sans-serif; background-color: #f1f5f9; margin: 0; padding: 0; }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* บังคับแบ่ง 2 คอลัมน์ */
+            gap: 30px;
+        }
+
+        .card-white {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card-dark {
+            background: #0f172a;
+            color: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+        }
+
+        .btn-pr {
+            background: #f43f5e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .status-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            margin-top: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+
+        .status-item {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="background: #2563eb; color: white; padding: 60px 20px; text-align: center;">
+        <h1 style="margin: 0; font-size: 40px;">RAGHC MANAGEMENT</h1>
+        <p style="opacity: 0.8;">Ramathibodi Global Health Studies Club</p>
+    </header>
+
+    <div class="main-container">
+        
+        <div class="card-white">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+                <div style="background: #0f172a; color: white; width: 50px; height: 50px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 22px;">External CRM</h3>
+                    <p style="margin: 0; color: #94a3b8; font-size: 10px; font-weight: bold; letter-spacing: 1px;">PARTNER DATABASE</p>
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; padding: 20px; border-radius: 20px; border: 1px solid #f1f5f9; display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <span style="font-weight: bold; font-size: 14px; color: #475569;">Current Partners</span>
+                <span style="color: #2563eb; font-weight: bold;">12 Orgs</span>
+            </div>
+
+            <a href="URL_CRM" style="background: #0f172a; color: white; display: block; text-align: center; padding: 15px; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 12px; letter-spacing: 1px;">
+                ACCESS CRM SPREADSHEET
+            </a>
+
+            <div style="margin-top: 40px; border-top: 1px solid #f1f5f9; pt-20px;">
+                <p style="color: #94a3b8; font-size: 10px; font-weight: bold; margin-bottom: 20px;">PR RESOURCES</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <a href="URL_SLIDE" style="background: #f8fafc; padding: 15px; border-radius: 15px; text-decoration: none; color: #475569; font-size: 10px; font-weight: bold; text-align: center; border: 1px solid #f1f5f9;">
+                        <i class="fas fa-file-powerpoint" style="color: #f59e0b; margin-bottom: 5px; display: block; font-size: 18px;"></i> SLIDE TEMPLATE
+                    </a>
+                    <a href="URL_LOGO" style="background: #f8fafc; padding: 15px; border-radius: 15px; text-decoration: none; color: #475569; font-size: 10px; font-weight: bold; text-align: center; border: 1px solid #f1f5f9;">
+                        <i class="fas fa-vector-square" style="color: #2563eb; margin-bottom: 5px; display: block; font-size: 18px;"></i> LOGO ASSETS
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-dark">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <div>
+                    <h3 style="margin: 0; font-size: 22px;">PR Production Hub</h3>
+                    <p style="margin: 0; color: #60a5fa; font-size: 10px; font-weight: bold; letter-spacing: 1px;">LIVE STATUS TRACKING</p>
+                </div>
+                <a href="URL_FORM" class="btn-pr">REQUEST PR</a>
+            </div>
+
+            <div class="status-box">
+                <div style="background: rgba(255,255,255,0.1); padding: 10px 20px; font-size: 9px; display: flex; justify-content: space-between;">
+                    <span style="color: #60a5fa; font-weight: bold;"><i class="fas fa-sync-alt fa-spin"></i> LIVE WORK-FLOW</span>
+                    <a href="URL_ADMIN" style="color: rgba(255,255,255,0.4); text-decoration: underline;">Admin Edit</a>
+                </div>
+
+                <div id="pr-status-list">
+                    <div style="padding: 40px; text-align: center; color: rgba(255,255,255,0.2); font-style: italic; font-size: 12px;">
+                        กำลังเชื่อมต่อ Google Sheets...
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; font-size: 9px; color: rgba(255,255,255,0.2); margin-top: 20px;">
+                *ข้อมูลอัปเดตอัตโนมัติจาก Google Sheet*
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // ใส่ URL CSV ของประธานตรงนี้
+        const CSV_URL = 'ใส่_URL_CSV_ที่นี่';
+
+        async function loadPRData() {
+            try {
+                const res = await fetch(CSV_URL);
+                const text = await res.text();
+                const rows = text.split('\n').slice(1);
+                const list = document.getElementById('pr-status-list');
+                
+                list.innerHTML = '';
+                rows.forEach(row => {
+                    const [task, status, req, link] = row.split(',');
+                    if(!task) return;
+
+                    let bColor = "#475569"; // Default
+                    if(status.trim() === "In Progress") bColor = "#d97706";
+                    if(status.trim() === "Finished") bColor = "#059669";
+
+                    list.innerHTML += `
+                        <div class="status-item">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold; font-size: 14px;">${task}</span>
+                                <span class="badge" style="background: ${bColor}">${status}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                ${status.trim() === "Finished" ? 
+                                    `<a href="${link}" target="_blank" style="color: #60a5fa; font-size: 11px; font-weight: bold; text-decoration: none;"><i class="fab fa-instagram"></i> ดูโพสต์/ดาวน์โหลด</a>` : 
+                                    `<span style="color: rgba(255,255,255,0.3); font-size: 10px;">Requester: ${req}</span>`
+                                }
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        loadPRData();
+        setInterval(loadPRData, 60000);
+    </script>
+</body>
+</html>
