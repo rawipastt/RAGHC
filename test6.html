@@ -155,7 +155,7 @@
     
     // 2. ลิงก์สำหรับส่งข้อมูล (Web App URL จาก Google Apps Script)
     // *** ต้องเอา URL ที่ได้จากการ Deploy มาใส่ที่นี่ ***
-    const scriptUrl = "ใส่_URL_ที่ได้จาก_Apps_Script_ตรงนี้";
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbxUP0XvgwuIUt9GXLUJvefVz3Nk6q3ld6RYSxFFfoyrL7lAutWABwBT0C-gGIty4PZkmg/exec";
 
     // ฟังก์ชันอ่านข้อมูลมาโชว์ (Output)
     async function loadData() {
@@ -196,7 +196,7 @@
             });
             
             msg.style.color = "green";
-            msg.innerText = "อัปเดตสำเร็จ! รอสักครู่ให้หน้าเว็บรีเฟรชข้อมูลนะคะ ✨";
+            msg.innerText = "อัปเดตสำเร็จ! รอสักครู่ให้หน้าเว็บรีเฟรชข้อมูลนะพี่ชาย ✨";
             setTimeout(loadData, 2000); // โหลดข้อมูลใหม่หลังจากส่ง 2 วินาที
         } catch (e) {
             msg.style.color = "red";
