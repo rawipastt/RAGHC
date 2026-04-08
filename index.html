@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAGHC Management Portal</title>
+    <title>RAGHC - Research and Global Health Club | Official Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', 'Kanit', sans-serif; background-color: #f8fafc; }
-        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        body { font-family: 'Kanit', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); border: 1px solid rgba(226, 232, 240, 0.8); transition: transform 0.2s; }
+        .glass-card:hover { transform: translateY(-5px); }
+        .code-block { background: rgba(15, 23, 42, 0.95); color: #38bdf8; font-family: 'Courier New', monospace; }
         .status-pill { padding: 2px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
         .status-connect { background: #e0f2fe; color: #0369a1; }
         .status-deploy { background: #dcfce7; color: #15803d; }
@@ -17,118 +21,139 @@
 </head>
 <body>
 
-    <nav class="sticky top-0 z-50 glass-card border-b px-6 py-4 flex justify-between items-center">
+    <nav class="sticky top-0 z-50 glass-nav px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-2">
-            <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-heart-pulse"></i></div>
-            <span class="font-bold text-xl tracking-tighter">RAGHC Portal</span>
+            <div class="bg-blue-600 p-2 rounded-lg text-white shadow-md"><i class="fas fa-heart-pulse"></i></div>
+            <span class="font-bold text-2xl tracking-tighter text-blue-900">RAGHC</span>
         </div>
-        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-700">
+            <a href="#about" class="hover:text-blue-600">About</a>
             <a href="#units" class="hover:text-blue-600">Units</a>
-            <a href="#pr" class="hover:text-blue-600">PR Resources</a>
-            <a href="#external" class="hover:text-blue-600">Conference</a>
-            <a href="#hub" class="hover:text-blue-600">Knowledge Hub</a>
+            <a href="#gallery" class="hover:text-blue-600">Gallery</a>
+            <a href="#code" class="hover:text-blue-600">Code</a>
+            <a href="#management" class="bg-blue-600 text-white px-4 py-2 rounded-full text-xs hover:bg-blue-700 shadow-md">Management Portal</a>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto p-6 space-y-10">
-        
-        <section id="pr" class="space-y-4">
-            <h2 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-bullhorn text-blue-500"></i> PR & Brand Assets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
-                    <div>
-                        <h3 class="font-bold">Slide Template (Canva)</h3>
-                        <p class="text-sm text-slate-500">ใช้สำหรับงาน Presentation ของชมรม</p>
-                    </div>
-                    <a href="ใส่_LINK_CANVA_ตรงนี้" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm hover:bg-blue-700">Open Canva</a>
-                </div>
-                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
-                    <div>
-                        <h3 class="font-bold">Official Logo (.PNG)</h3>
-                        <p class="text-sm text-slate-500">พื้นหลังโปร่งใส สำหรับงานกราฟิก</p>
-                    </div>
-                    <a href="ใส่_LINK_รูป_PNG_ตรงนี้" download class="border border-blue-600 text-blue-600 px-4 py-2 rounded-xl text-sm hover:bg-blue-50">Download</a>
+    <header class="hero-gradient text-white py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <span class="bg-white/20 px-4 py-1 rounded-full text-sm">Reseach and Global Health Club</span>
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">Driving Innovation, <br>Impacting Global Health</h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">ชมรมที่มุ่งเน้นการวิจัยและการพัฒนาศักยภาพเพื่อยกระดับสุขภาพระดับโลก</p>
+        </div>
+    </header>
+
+    <section id="units" class="max-w-7xl mx-auto p-6 py-20 space-y-12">
+        <h2 class="text-3xl font-bold text-center text-blue-950">Specialized Units</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass-card p-6 rounded-3xl space-y-4 border border-slate-100 shadow-lg">
+                <div class="bg-blue-100 text-blue-600 w-12 h-12 flex items-center justify-center rounded-2xl"><i class="fas fa-book-open text-xl"></i></div>
+                <h3 class="font-bold text-xl">Global Health Education</h3>
+                <p class="text-sm text-slate-600">พัฒนาสื่อการสอนและเผยแพร่ความรู้ด้านสุขภาวะระดับโลก</p>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <a href="URL_OVERVIEW_EDU" class="bg-slate-900 text-white text-center py-2 rounded-xl font-semibold">Overview</a>
+                    <a href="URL_DRIVE_EDU" class="bg-blue-600 text-white text-center py-2 rounded-xl font-semibold">Google Drive</a>
                 </div>
             </div>
-        </section>
+            </div>
+    </section>
 
-        <section id="external" class="space-y-4">
-            <h2 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-globe text-emerald-500"></i> External Relation & Conference</h2>
-            <div class="glass-card rounded-2xl overflow-hidden text-sm">
+    <section id="code" class="py-20 bg-slate-100 px-6">
+        <div class="max-w-5xl mx-auto glass-card p-8 rounded-3xl space-y-6">
+            <h2 class="text-2xl font-bold text-blue-950 flex items-center gap-2"><i class="fas fa-code text-blue-500"></i> Code of Conduct</h2>
+            <div class="code-block p-6 rounded-2xl text-sm overflow-x-auto">
+                <p>> INIT RAGHC_Code_of_Conduct_V1.0</p>
+                <p>> [INFO] Respect. Collaboration. Innovation. Integrity.</p>
+                <p>> [INFO] Execute Global_Health_Mission(2026)...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="management" class="max-w-7xl mx-auto p-6 py-20 space-y-10 border-t mt-10">
+        <div class="flex items-center justify-between gap-4">
+            <h2 class="text-3xl font-bold text-blue-950 flex items-center gap-3">
+                <i class="fas fa-sliders text-blue-600"></i> Management Portal
+            </h2>
+            <span class="text-xs bg-slate-100 text-slate-500 px-3 py-1 rounded-full">For Members Only</span>
+        </div>
+
+        <div class="glass-card p-6 rounded-3xl space-y-5">
+            <h3 class="font-bold text-xl flex items-center gap-2 text-blue-900"><i class="fas fa-bullhorn text-blue-500"></i> PR & Brand Assets</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="ใส่_LINK_CANVA_ตรงนี้" target="_blank" class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border hover:bg-blue-50 hover:border-blue-200 transition-all">
+                    <div class="flex items-center gap-3">
+                        <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/canva_logo_icon_145450.png" alt="Canva" class="w-8 h-8 rounded-lg">
+                        <div>
+                            <span class="font-semibold text-sm">Slide Template (Canva)</span>
+                            <p class="text-xs text-slate-500">เปิด Template เพื่อนำไปใช้งาน</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-slate-400"></i>
+                </a>
+                <a href="ใส่_LINK_รูป_PNG_ตรงนี้" download class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border hover:bg-blue-50 hover:border-blue-200 transition-all">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-lg"><i class="fas fa-image"></i></div>
+                        <div>
+                            <span class="font-semibold text-sm">Logo RAGHC (PNG)</span>
+                            <p class="text-xs text-slate-500">ดาวน์โหลดโลโก้พื้นหลังโปร่งใส</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-download text-slate-400"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-3xl space-y-5">
+            <h3 class="font-bold text-xl flex items-center gap-2 text-emerald-900"><i class="fas fa-globe text-emerald-500"></i> Conference Connection Status</h3>
+            <div class="overflow-x-auto text-sm">
                 <table class="w-full text-left">
                     <thead class="bg-slate-50 border-b">
                         <tr>
-                            <th class="p-4">Conference Name</th>
+                            <th class="p-4">Conference</th>
                             <th class="p-4">Status</th>
-                            <th class="p-4">Action</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y">
                         <tr>
                             <td class="p-4 font-medium">World Health Summit 2026</td>
-                            <td class="p-4"><span class="status-pill status-connect">Connecting</span></td>
-                            <td class="p-4"><a href="#" class="text-blue-600 font-semibold">CRM Data</a></td>
+                            <td class="p-4"><span class="status-pill status-connect">Connect</span></td>
                         </tr>
                         <tr>
                             <td class="p-4 font-medium">Global Health Engagement Conf.</td>
-                            <td class="p-4"><span class="status-pill status-deploy">Ready to Deploy</span></td>
-                            <td class="p-4"><a href="#" class="text-blue-600 font-semibold">CRM Data</a></td>
+                            <td class="p-4"><span class="status-pill status-deploy">Deploy</span></td>
                         </tr>
-                    </tbody>
-                </table>
+                    </table>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section id="units" class="space-y-4">
-            <h2 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-layer-group text-purple-500"></i> Specialized Units</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-3xl space-y-4 border-t-4 border-blue-500">
-                    <div class="flex justify-between items-start">
-                        <div class="bg-blue-100 text-blue-600 p-3 rounded-2xl"><i class="fas fa-book-open text-xl"></i></div>
-                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded text-slate-500 italic">Core Unit</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg">GH Education</h3>
-                        <p class="text-xs text-slate-500">ฝ่ายวิชาการและสื่อการสอน</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-2">
-                        <a href="#" class="bg-slate-900 text-white text-center py-2 rounded-xl text-xs font-semibold">Overview</a>
-                        <a href="LINK_DRIVE" class="bg-blue-600 text-white text-center py-2 rounded-xl text-xs font-semibold">Drive</a>
-                    </div>
-                    <button onclick="window.location.href='LINK_FORM'" class="w-full border-2 border-dashed border-slate-200 py-2 rounded-xl text-xs text-slate-500 hover:border-blue-400 hover:text-blue-500 transition-all">
-                        <i class="fas fa-plus-circle mr-1"></i> Request Task
-                    </button>
-                </div>
-                </div>
-        </section>
+        <div class="glass-card p-6 rounded-3xl space-y-5">
+            <h3 class="font-bold text-xl flex items-center gap-2 text-purple-900"><i class="fas fa-plus-circle text-purple-500"></i> Request Task</h3>
+            <p class="text-sm text-slate-600">ส่งคำขอทำงานไปยัง Specialized Units ของ RAGHC</p>
+            <a href="ใส่_LINK_GOOGLE_FORM_ตรงนี้" target="_blank" class="w-full block bg-purple-600 text-white text-center py-3 rounded-xl font-semibold hover:bg-purple-700 shadow-md">
+                <i class="fas fa-file-contract mr-2"></i> Submit Request
+            </a>
+        </div>
 
-        <section id="hub" class="space-y-4 pb-20">
-            <h2 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-lightbulb text-amber-500"></i> Knowledge Hub</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-1 glass-card p-6 rounded-3xl">
-                    <h3 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-clock text-red-400"></i> Reflection Deadline</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center text-sm border-b pb-2">
-                            <span>Unit A Reflection</span>
-                            <span class="font-bold text-red-500">15 Apr</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm border-b pb-2">
-                            <span>Conference Summary</span>
-                            <span class="font-bold text-slate-500">20 Apr</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:col-span-2 glass-card p-6 rounded-3xl bg-gradient-to-br from-white to-blue-50">
-                    <h3 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-robot text-blue-500"></i> AI Reflection Insights (Weekly)</h3>
-                    <div class="bg-white/50 p-4 rounded-2xl border border-blue-100 italic text-slate-600 text-sm leading-relaxed">
-                        "จากการรวบรวม Reflection ของยูนิตต่างๆ ในสัปดาห์นี้ พบว่าความท้าทายหลักคือการประสานงานกับ External Partners แต่มีจุดแข็งที่สำคัญคือระบบการจัดการไฟล์ที่เริ่มเป็นระเบียบมากขึ้น..."
-                        <p class="mt-4 text-xs font-bold text-blue-600">— สรุปโดย AI (Gemini 3 Flash)</p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-1 glass-card p-6 rounded-3xl bg-white space-y-4">
+                <h4 class="font-bold flex items-center gap-2 text-red-900"><i class="fas fa-clock text-red-400"></i> Reflection Deadline</h4>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm bg-slate-50 p-3 rounded-xl border">
+                        <span>Unit A Reflection</span>
+                        <span class="font-bold text-red-500 underline">15 Apr</span>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="lg:col-span-2 glass-card p-6 rounded-3xl bg-gradient-to-br from-white to-amber-50 space-y-4">
+                <h4 class="font-bold flex items-center gap-2 text-amber-900"><i class="fas fa-robot text-amber-500"></i> AI Reflection Insights (Weekly)</h4>
+                <div class="bg-white/70 p-4 rounded-2xl italic text-slate-600 text-sm leading-relaxed border border-amber-100 shadow-inner">
+                    "สรุปภาพรวมสัปดาห์นี้: แนะนำให้เร่งส่ง Reflection ภายในกำหนด..."
+                </div>
+            </div>
+        </div>
 
-    </main>
+    </section>
 
 </body>
 </html>
