@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Management Portal - Live Update</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* Navigation */
+        nav { background: #2c3e50; color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .logo { font-size: 1.5rem; font-weight: bold; color: #3498db; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; transition: 0.3s; }
+        nav ul li a:hover { color: #3498db; }
+
+        /* Hero Section */
+        .hero { height: 35vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
+
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        .section-title { text-align: center; margin: 40px 0 20px; color: #2c3e50; position: relative; padding-bottom: 10px; }
+        .section-title::after { content: ''; width: 50px; height: 3px; background: #3498db; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        /* Executive Board */
+        .exec-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 40px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        .progress-group { margin-bottom: 20px; }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 500; }
+        .progress-bar-container { background: #eee; border-radius: 20px; height: 18px; overflow: hidden; }
+        .progress-fill { background: #3498db; height: 100%; width: 0%; color: white; font-size: 11px; line-height: 18px; text-align: center; transition: width 1s ease-in-out; }
+
+        .drive-btn { display: block; background: #1f8b4d; color: white; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; margin-top: 15px; transition: 0.3s; }
+        .drive-btn:hover { background: #156d3a; transform: translateY(-2px); }
+
+        /* Public Stats */
+        .impact-stats { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; background: #2c3e50; color: white; padding: 40px; border-radius: 15px; margin: 40px 0; }
+        .stat-item h2 { font-size: 2.5rem; color: #3498db; margin-bottom: 5px; }
+
+        /* Members Section */
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .member-card { background: white; padding: 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid #3498db; }
+        
+        iframe { width: 100%; height: 450px; border: none; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+        footer { background: #2c3e50; color: white; text-align: center; padding: 30px 0; margin-top: 60px; }
+
+        @media (max-width: 768px) { .exec-grid, .impact-stats { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RAGHC PORTAL</div>
+        <ul>
+            <li><a href="#exec">Board</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#public">Public</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Unit Management System</h1>
+        <p>Live Data Tracking & Operations Hub</p>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title" id="exec"><i class="fas fa-chart-line"></i> Dashboard ผู้บริหาร</h2>
+        <div class="exec-grid">
+            <div class="card">
+                <h3><i class="fas fa-tasks"></i> รายงานความคืบหน้าแต่ละยูนิต</h3>
+                <p style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">(ดึงข้อมูลอัตโนมัติจาก Google Sheets)</p>
+                
+                <div class="progress-group">
+                    <div class="progress-label"><span>ฝ่ายวิชาการ (Academic)</span><span id="label-academic">0%</span></div>
+                    <div class="progress-bar-container"><div id="bar-academic" class="progress-fill">0%</div></div>
+                </div>
+
+                <div class="progress-group">
+                    <div class="progress-label"><span>ฝ่ายกิจกรรม (Event)</span><span id="label-event">0%</span></div>
+                    <div class="progress-bar-container"><div id="bar-event" class="progress-fill" style="background: #e67e22;">0%</div></div>
+                </div>
+
+                <div class="progress-group">
+                    <div class="progress-label"><span>ฝ่ายประชาสัมพันธ์ (PR)</span><span id="label-pr">0%</span></div>
+                    <div class="progress-bar-container"><div id="bar-pr" class="progress-fill" style="background: #2ecc71;">0%</div></div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-folder-open"></i> ลัดสู่คลังเอกสาร</h3>
+                <p style="font-size: 0.9rem; margin: 10px 0;">ข้อมูลสรุปการประชุมและเอกสารสำคัญสำหรับ Board</p>
+                <a href="#" class="drive-btn"><i class="fab fa-google-drive"></i> Executive Drive</a>
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                <h4>Strategic Note:</h4>
+                <p id="roadmap-note" style="font-size: 0.85rem; color: #555;">กำลังโหลดข้อมูลแผนงาน...</p>
+            </div>
+        </div>
+
+        <div class="impact-stats">
+            <div class="stat-item">
+                <h2 id="stat-people">0</h2>
+                <p>ผู้เข้าร่วมงานสะสม</p>
+            </div>
+            <div class="stat-item">
+                <h2 id="stat-projects">0</h2>
+                <p>โครงการปี 2026</p>
+            </div>
+            <div class="stat-item">
+                <h2 id="stat-rating">0</h2>
+                <p>ความพึงพอใจ</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="members"><i class="fas fa-users"></i> สมาชิก & กิจกรรม</h2>
+        <div class="member-grid">
+            <div class="member-card">
+                <i class="fas fa-id-badge fa-3x" style="color: #3498db;"></i>
+                <div><strong>ประธานชมรม</strong><br><small>ติดต่อ: 08x-xxx-xxxx</small></div>
+            </div>
+            <div class="member-card">
+                <i class="fas fa-id-badge fa-3x" style="color: #2ecc71;"></i>
+                <div><strong>ฝ่ายเลขาฯ</strong><br><small>ติดต่อ: 08x-xxx-xxxx</small></div>
+            </div>
+        </div>
+
+        <iframe src="https://calendar.google.com/calendar/embed?src=en.th%23holiday%40group.v.calendar.google.com&ctz=Asia%2FBangkok"></iframe>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RAGHC Team. Built with Transparency.</p>
+    </footer>
+
+    <script>
+        // ลิงก์ CSV ที่คุณส่งมา
+        const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEd01amjo9pI1z7S_wE5N882TUqFF6z2H4trThvoZW4w4evHV5nmlx8QABWzJ2yKdHrqozTUhk4YJ2/pub?output=csv";
+
+        async function fetchData() {
+            try {
+                const response = await fetch(csvUrl);
+                const text = await response.text();
+                
+                // แปลง CSV เป็นตาราง Array
+                const rows = text.split('\n').map(row => row.split(','));
+
+                // 1. Update Progress Bars (อิงตาม Mock Sheet ที่ผมทำให้ด้านบน)
+                // แถวที่ 1 = Header, แถว 2 = Academic, แถว 3 = Event, แถว 4 = PR
+                updateUI("academic", rows[1][3]); // Column 4 (Index 3)
+                updateUI("event", rows[2][3]);
+                updateUI("pr", rows[3][3]);
+
+                // 2. Update Impact Stats (ถ้าบรรทัดที่ 5 เป็นต้นไปมีข้อมูลสถิติ)
+                if(rows[4]) document.getElementById('stat-people').innerText = rows[4][1] + "+"; // ผู้เข้าร่วม
+                if(rows[5]) document.getElementById('stat-projects').innerText = rows[5][1];      // โครงการ
+                if(rows[6]) document.getElementById('stat-rating').innerText = rows[6][1] + "/5"; // เรตติ้ง
+
+                // 3. Update Strategic Note (ถ้ามีคอลัมน์ Note)
+                if(rows[1][2]) document.getElementById('roadmap-note').innerText = "Current Task: " + rows[1][2];
+
+            } catch (error) {
+                console.error("เชื่อมต่อข้อมูลไม่สำเร็จ:", error);
+            }
+        }
+
+        function updateUI(unit, value) {
+            const val = parseInt(value) || 0;
+            const bar = document.getElementById(`bar-${unit}`);
+            const label = document.getElementById(`label-${unit}`);
+            if(bar && label) {
+                bar.style.width = val + "%";
+                bar.innerText = val + "%";
+                label.innerText = val + "%";
+            }
+        }
+
+        // เริ่มทำงาน
+        fetchData();
+        // รีเฟรชอัตโนมัติทุก 1 นาที
+        setInterval(fetchData, 60000);
+    </script>
+</body>
+</html>
