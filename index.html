@@ -3,155 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAGHC Portal 2026</title>
+    <title>RAGHC Portal | Ramathibodi Global Health</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Kanit', sans-serif; }
-        .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-        .unit-card { transition: all 0.3s ease; }
-        .unit-card:hover { transform: translateY(-10px); }
+        body { font-family: 'Inter', 'Kanit', sans-serif; scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .unit-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .unit-card:hover { transform: translateY(-12px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .member-avatar { border: 3px solid white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); transition: transform 0.3s; }
+        .member-avatar:hover { transform: scale(1.1); z-index: 10; }
     </style>
 </head>
-<body class="bg-[#F4F7FA]">
+<body class="bg-[#f8fafc] text-slate-900 leading-relaxed">
 
-    <div class="bg-[#1E3A8A] text-white py-3 px-4 text-center text-sm font-semibold tracking-wide">
-        <i class="fas fa-bullhorn mr-2 animate-bounce"></i> 
-        ANNOUNCEMENT: Recruitment สำหรับทีม Staff PMAC 2026 เปิดรับสมัครแล้ว! 
-        <a href="#" class="ml-3 underline hover:text-blue-200">คลิกดูรายละเอียดที่นี่ →</a>
+    <div class="bg-slate-900 text-white py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+            <div class="flex items-center gap-2"><i class="fas fa-users text-blue-400"></i> Next Assembly: <span class="text-blue-400">20 APR</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-clipboard-list text-emerald-400"></i> Next Board: <span class="text-emerald-400">15 APR</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-user-tie text-rose-400"></i> Next Advisor: <span class="text-rose-400">25 APR</span></div>
+        </div>
     </div>
 
-    <nav class="glass-effect sticky top-0 z-50 border-b border-gray-200 py-4 px-8 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-heartbeat"></i></div>
-            <span class="font-bold text-xl tracking-tight text-blue-900">RAGHC</span>
-        </div>
-        <div class="flex gap-8 text-sm font-medium text-gray-600">
-            <a href="#units" class="hover:text-blue-600">Units</a>
-            <a href="#pmac" class="hover:text-blue-600 font-bold text-blue-600">PMAC 2026</a>
-            <a href="#" class="hover:text-blue-600">Gallery</a>
-            <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">Management Portal</a>
+    <nav class="glass-nav border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3 group">
+                <div class="bg-blue-600 p-2 rounded-xl group-hover:rotate-12 transition-transform shadow-lg">
+                    <i class="fas fa-hand-holding-heart text-white text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-2xl tracking-tighter block leading-none">RAGHC</span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold">Ramathibodi • Since 2025</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#units" class="hover:text-blue-600 transition">Units</a>
+                <a href="#members" class="hover:text-blue-600 transition">Members</a>
+                <a href="#hub" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200">Knowledge Hub</a>
+            </div>
         </div>
     </nav>
 
-    <header class="bg-white py-20 text-center border-b border-gray-100">
-        <div class="max-w-4xl mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
-                Ramathibodi Global Health Studies Club
+    <header class="relative overflow-hidden pt-16 pb-20 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900">
+                Ramathibodi Global Health<br/><span class="text-blue-600">Studies Club</span>
             </h1>
-            <p class="text-blue-600 font-semibold mb-6">Since 2025</p>
-            <h2 class="text-2xl text-slate-700 font-light mb-4">"Empowering students through a global health community."</h2>
-            <p class="text-slate-500 italic">ชมรมสุขภาพโลกไร้พรหมแดน คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี</p>
+            <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-light mb-4 italic">
+                "Empowering students through a global health community."
+            </p>
+            <p class="text-slate-400 text-sm">ชมรมสุขภาพโลกไร้พรหมแดน คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี</p>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto py-16 px-6 space-y-20">
-
+    <main class="max-w-7xl mx-auto px-6 py-16 space-y-24">
+        
         <section id="units">
-            <h3 class="text-2xl font-bold text-slate-800 mb-10 border-l-4 border-blue-600 pl-4">Specialized Units</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                
-                <div class="unit-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
-                    <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-map-marked-alt"></i></div>
-                    <h4 class="font-bold mb-2">Border Health</h4>
-                    <p class="text-xs text-gray-400 mb-6">Literacy & Fieldwork</p>
-                    <a href="#" class="block w-full py-2 bg-blue-600 text-white rounded-xl text-[10px] font-bold">Google Drive</a>
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Specialized Units</h2>
+                <div class="h-1.5 w-20 bg-blue-600 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="unit-card bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 opacity-10 text-6xl"><i class="fas fa-award"></i></div>
+                    <h4 class="font-bold text-xl mb-1">PMAC 2026</h4>
+                    <p class="text-[10px] text-blue-300 uppercase font-bold tracking-widest mb-6">Flagship Event</p>
+                    <div class="space-y-3">
+                        <a href="URL_TASK_PMAC" class="flex items-center justify-between p-3 bg-white/10 rounded-xl hover:bg-white/20 transition">
+                            <span class="text-xs font-bold">Task Progress</span><i class="fas fa-chevron-right text-[10px]"></i>
+                        </a>
+                        <a href="URL_DRIVE_PMAC" class="flex items-center justify-between p-3 bg-blue-600 rounded-xl hover:bg-blue-500 transition shadow-lg shadow-blue-900/50">
+                            <span class="text-xs font-bold text-white">Google Drive</span><i class="fab fa-google-drive text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="unit-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
-                    <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-book-open"></i></div>
-                    <h4 class="font-bold mb-2">Education</h4>
-                    <p class="text-xs text-gray-400 mb-6">Academic & Seminar</p>
-                    <a href="#" class="block w-full py-2 bg-blue-600 text-white rounded-xl text-[10px] font-bold">Google Drive</a>
+                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
+                    <div class="w-12 h-12 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-map-location-dot"></i></div>
+                    <h4 class="font-bold text-xl mb-1">Border Health</h4>
+                    <p class="text-xs text-slate-400 mb-6">Literacy & Fieldwork</p>
+                    <div class="mt-auto space-y-2">
+                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase">Task Progress</a>
+                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase">Unit Drive</a>
+                    </div>
                 </div>
 
-                <div class="unit-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
-                    <div class="text-emerald-500 text-3xl mb-4"><i class="fas fa-leaf"></i></div>
-                    <h4 class="font-bold mb-2">Planetary</h4>
-                    <p class="text-xs text-gray-400 mb-6">Sustainability</p>
-                    <a href="#" class="block w-full py-2 bg-blue-600 text-white rounded-xl text-[10px] font-bold">Google Drive</a>
+                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-graduation-cap"></i></div>
+                    <h4 class="font-bold text-xl mb-1 text-slate-800">GH Education</h4>
+                    <p class="text-xs text-slate-400 mb-6">Academic & Network</p>
+                    <div class="mt-auto space-y-2">
+                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase text-center uppercase">Task Progress</a>
+                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase text-center uppercase">Unit Drive</a>
+                    </div>
                 </div>
 
-                <div class="unit-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
-                    <div class="text-amber-500 text-3xl mb-4"><i class="fas fa-trophy"></i></div>
-                    <h4 class="font-bold mb-2">Case & Compe</h4>
-                    <p class="text-xs text-gray-400 mb-6">Workshops</p>
-                    <a href="#" class="block w-full py-2 bg-blue-600 text-white rounded-xl text-[10px] font-bold">Google Drive</a>
+                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-leaf"></i></div>
+                    <h4 class="font-bold text-xl mb-1 text-slate-800">Planetary</h4>
+                    <p class="text-xs text-slate-400 mb-6">Sustainability & Waste</p>
+                    <div class="mt-auto space-y-2">
+                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase text-center uppercase">Task Progress</a>
+                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase text-center uppercase text-center uppercase">Unit Drive</a>
+                    </div>
                 </div>
 
-                <div class="unit-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
-                    <div class="text-purple-500 text-3xl mb-4"><i class="fas fa-microscope"></i></div>
-                    <h4 class="font-bold mb-2">Research</h4>
-                    <p class="text-xs text-gray-400 mb-6">Data & Analysis</p>
-                    <a href="#" class="block w-full py-2 bg-blue-600 text-white rounded-xl text-[10px] font-bold">Google Drive</a>
+                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-trophy"></i></div>
+                    <h4 class="font-bold text-xl mb-1 text-slate-800">Case & Compe</h4>
+                    <p class="text-xs text-slate-400 mb-6">Mindset & Workshops</p>
+                    <div class="mt-auto space-y-2">
+                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase text-center uppercase">Task Progress</a>
+                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase text-center uppercase text-center uppercase">Unit Drive</a>
+                    </div>
                 </div>
 
+                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col">
+                    <div class="w-12 h-12 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-microscope"></i></div>
+                    <h4 class="font-bold text-xl mb-1 text-slate-800">Research</h4>
+                    <p class="text-xs text-slate-400 mb-6">Education & Data</p>
+                    <div class="mt-auto space-y-2">
+                        <a href="#" class="block w-full py-2.5 bg-slate-50 text-slate-600 rounded-xl text-[10px] font-bold text-center border border-slate-100 hover:bg-slate-100 transition tracking-widest uppercase text-center uppercase">Task Progress</a>
+                        <a href="#" class="block w-full py-2.5 bg-blue-600 text-white rounded-xl text-[10px] font-bold text-center hover:bg-blue-700 transition shadow-md shadow-blue-100 tracking-widest uppercase text-center uppercase text-center uppercase">Unit Drive</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="pmac">
-            <div class="bg-white rounded-[2.5rem] p-10 shadow-xl border border-blue-50 overflow-hidden relative">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-                    <div>
-                        <h3 class="text-3xl font-bold text-slate-900">PMAC 2026 Tracking</h3>
-                        <p class="text-gray-500 mt-1">Prince Mahidol Award Conference Status Dashboard</p>
-                    </div>
-                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-bold text-sm">Overall Progress: 45%</span>
+        <section id="members" class="bg-slate-900 rounded-[3rem] p-12 text-white shadow-2xl overflow-hidden">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Member Spotlight</h2>
+                    <p class="text-slate-400 text-xs uppercase tracking-widest">Connect with our RAGHC Team</p>
                 </div>
+                <button class="text-xs font-bold border border-white/20 px-6 py-2 rounded-full hover:bg-white/10 transition">View All Members</button>
+            </div>
 
-                <div class="w-full bg-gray-100 h-4 rounded-full mb-12 overflow-hidden">
-                    <div class="bg-gradient-to-r from-blue-400 to-blue-700 h-full w-[45%] shadow-lg shadow-blue-200"></div>
+            <div class="flex overflow-x-auto gap-10 pb-4 scrollbar-hide">
+                <div class="flex-none w-40 text-center group">
+                    <img src="https://ui-avatars.com/api/?name=President&background=0D8ABC&color=fff&size=128" alt="Name" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold text-sm">ชื่อ-นามสกุล</h5>
+                    <p class="text-[10px] text-blue-400 font-bold uppercase tracking-tighter">President</p>
                 </div>
+                <div class="flex-none w-40 text-center group">
+                    <img src="https://ui-avatars.com/api/?name=Member+2&background=random&size=128" alt="Name" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold text-sm">ชื่อ-นามสกุล</h5>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Unit Lead</p>
+                </div>
+                <div class="flex-none w-40 text-center group">
+                    <img src="https://ui-avatars.com/api/?name=Member+3&background=random&size=128" alt="Name" class="member-avatar w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold text-sm">ชื่อ-นามสกุล</h5>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Secretary</p>
+                </div>
+                <div class="flex-none w-32 flex flex-col items-center justify-center opacity-40 italic">
+                    <i class="fas fa-plus-circle text-2xl mb-2"></i>
+                    <span class="text-[10px]">Add Staff</span>
+                 </div>
+            </div>
+        </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div class="relative">
-                        <div class="flex items-center gap-3 mb-2">
-                            <i class="fas fa-check-circle text-emerald-500"></i>
-                            <h5 class="font-bold text-sm text-slate-800 uppercase">Preparation</h5>
+        <section id="hub" class="pt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm border-t-8 border-t-rose-500">
+                    <h3 class="font-bold text-xl mb-6"><i class="fas fa-calendar-check text-rose-500 mr-2"></i> Deadlines</h3>
+                    <div class="space-y-4 text-xs">
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl">
+                            <span class="font-medium">Unit Reflection</span>
+                            <span class="font-bold text-rose-500">30 APR</span>
                         </div>
-                        <p class="text-xs text-gray-400">Planning & Logistics</p>
-                        <span class="mt-4 inline-block text-[10px] font-bold px-2 py-1 bg-emerald-100 text-emerald-700 rounded">COMPLETED</span>
-                    </div>
-
-                    <div class="relative">
-                        <div class="flex items-center gap-3 mb-2">
-                            <i class="fas fa-circle-notch fa-spin text-blue-500"></i>
-                            <h5 class="font-bold text-sm text-slate-800 uppercase">Recruitment</h5>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl">
+                            <span class="font-medium">Board Report</span>
+                            <span class="font-bold text-slate-400">12 MAY</span>
                         </div>
-                        <p class="text-xs text-gray-400">Staff & Volunteer Selection</p>
-                        <span class="mt-4 inline-block text-[10px] font-bold px-2 py-1 bg-blue-100 text-blue-700 rounded">IN PROGRESS</span>
-                    </div>
-
-                    <div class="relative opacity-40">
-                        <div class="flex items-center gap-3 mb-2">
-                            <i class="far fa-circle"></i>
-                            <h5 class="font-bold text-sm text-slate-800 uppercase">Youth Program</h5>
-                        </div>
-                        <p class="text-xs text-gray-400">Workshops & Networking</p>
-                        <span class="mt-4 inline-block text-[10px] font-bold px-2 py-1 bg-gray-100 text-gray-500 rounded">PENDING</span>
-                    </div>
-
-                    <div class="relative opacity-40">
-                        <div class="flex items-center gap-3 mb-2">
-                            <i class="far fa-circle"></i>
-                            <h5 class="font-bold text-sm text-slate-800 uppercase">The Conference</h5>
-                        </div>
-                        <p class="text-xs text-gray-400">Main Event (Jan 2026)</p>
-                        <span class="mt-4 inline-block text-[10px] font-bold px-2 py-1 bg-gray-100 text-gray-500 rounded">UPCOMING</span>
                     </div>
                 </div>
 
-                <div class="mt-12 pt-8 border-t border-gray-100 flex justify-center">
-                    <a href="https://pmac2026.com" class="text-blue-600 font-bold hover:underline">เข้าสู่เว็บไซต์หลัก PMAC เพื่อดูตารางงานทั้งหมด →</a>
+                <div class="lg:col-span-2 bg-gradient-to-br from-blue-600 to-indigo-800 p-10 rounded-[2.5rem] text-white shadow-xl relative overflow-hidden">
+                    <div class="absolute right-0 bottom-0 opacity-10 text-9xl -mb-10 -mr-10"><i class="fas fa-brain"></i></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center"><i class="fas fa-robot text-sm"></i></div>
+                            <h3 class="font-bold text-xl uppercase tracking-widest">AI Hub Summary</h3>
+                        </div>
+                        <p class="text-blue-50 text-sm leading-relaxed italic mb-8">
+                            "สัปดาห์นี้ PMAC เข้าสู่ช่วงเตรียม Youth Program, ฝั่ง Border Health สรุปงบประมาณเรียบร้อย แนะนำให้บอร์ดเช็คตารางประชุม Advisor วันที่ 25 นี้ด้วยครับ"
+                        </p>
+                        <a href="#" class="text-xs font-bold underline underline-offset-8">Read Full Hub Updates →</a>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white py-10 border-t border-gray-100 text-center">
-        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase">© 2026 RAMATHIBODI GLOBAL HEALTH STUDIES CLUB</p>
+    <footer class="bg-white border-t border-slate-100 py-16 px-6 text-center">
+        <div class="max-w-7xl mx-auto space-y-4">
+            <div class="flex justify-center gap-4 text-slate-300">
+                <a href="#" class="hover:text-blue-600 transition text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-600 transition text-xl"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">© 2026 Ramathibodi Global Health Studies Club</p>
+        </div>
     </footer>
 
 </body>
