@@ -3,153 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAGHC - Best Version 2026</title>
+    <title>RAGHC Best Version - Interactive Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #FFB7B2; /* ชมพูนม */
+            --primary: #FFB7B2; /* ชมพูพาสเทล */
             --secondary: #B2E2F2; /* ฟ้าพาสเทล */
             --accent: #E2CCFF; /* ม่วงพาสเทล */
+            --success: #C1E1C1; /* เขียวพาสเทล */
             --bg: #FDFDFD;
-            --text: #4A4A4A;
+            --text: #5A5A5A;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); }
+        body { background-color: var(--bg); color: var(--text); overflow-x: hidden; }
 
         /* Navigation */
         nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 600; color: #3498db; font-size: 1.5rem; }
+        .logo { font-weight: 600; color: #3498db; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
 
-        /* Hero & Vision */
+        /* Hero Section */
         .hero { 
-            background: linear-gradient(135deg, #FFB7B2 0%, #B2E2F2 100%);
-            padding: 80px 20px; text-align: center; color: white;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 70px 20px; text-align: center; color: white;
             border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;
+            box-shadow: 0 10px 30px rgba(255, 183, 178, 0.3);
         }
-        .vision-text { font-weight: 300; font-style: italic; margin-top: 10px; opacity: 0.9; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .vision { font-weight: 300; font-style: italic; opacity: 0.9; }
 
-        .container { max-width: 1000px; margin: auto; padding: 30px 20px; }
+        .container { max-width: 900px; margin: auto; padding: 30px 20px; }
 
-        /* Card Design */
+        /* Card System */
         .card { 
             background: white; padding: 30px; border-radius: 30px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-bottom: 30px;
-            border: 2px solid #FFF;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-bottom: 25px;
+            border: 2px solid #FFF; transition: 0.3s;
         }
 
-        /* Unit 5 Icons & Progress */
-        .unit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        /* 5 Units Progress */
         .unit-item { margin-bottom: 20px; }
-        .unit-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .prog-bg { background: #F0F0F0; height: 14px; border-radius: 20px; overflow: hidden; }
-        .prog-fill { height: 100%; width: 0%; border-radius: 20px; transition: 2s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+        .unit-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
+        .prog-bg { background: #F0F0F0; height: 16px; border-radius: 20px; overflow: hidden; }
+        .prog-fill { height: 100%; width: 0%; border-radius: 20px; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); text-align: center; color: white; font-size: 10px; line-height: 16px; }
 
-        /* Shortcuts */
-        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .btn { 
-            padding: 18px; border-radius: 20px; text-decoration: none; color: white; 
-            text-align: center; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 12px;
-            transition: 0.3s;
+        /* Input Form Area */
+        .input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        input, select { 
+            padding: 12px 15px; border-radius: 15px; border: 2px solid #F0F0F0; 
+            outline: none; transition: 0.3s; font-size: 0.9rem;
         }
-        .btn:hover { transform: scale(1.03); opacity: 0.9; }
+        input:focus, select:focus { border-color: var(--primary); }
+        .btn-send { 
+            width: 100%; margin-top: 15px; background: var(--primary); color: white; 
+            border: none; padding: 15px; border-radius: 20px; cursor: pointer; 
+            font-weight: 600; font-size: 1rem; transition: 0.3s;
+        }
+        .btn-send:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 183, 178, 0.4); }
 
-        /* Stats Section */
-        .stats { display: flex; justify-content: space-around; margin: 40px 0; text-align: center; }
-        .stat-num { font-size: 2.5rem; font-weight: 600; color: #3498db; display: block; }
+        /* Stats */
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 30px 0; }
+        .stat-card { background: white; padding: 20px; border-radius: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        .stat-card h2 { color: #3498db; font-size: 1.8rem; }
 
-        footer { text-align: center; padding: 50px; color: #BBB; font-size: 0.9rem; }
+        /* Quick Links */
+        .btn-link { 
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 15px; border-radius: 20px; text-decoration: none; color: white; font-weight: 500;
+        }
+
+        footer { text-align: center; padding: 50px; color: #BBB; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">RAGHC PORTAL</div>
-    <div style="font-size: 0.8rem; color: #AAA;">Ramathibodi Global Health Studies</div>
+    <div class="logo"><i class="fas fa-globe-asia"></i> RAGHC</div>
+    <div style="font-size: 0.8rem; color: #BBB;">Developing Leaders</div>
 </nav>
 
 <header class="hero">
-    <h1>Our Best Version ✨</h1>
-    <p class="vision-text">"Empowering the next generation of global health leaders"</p>
+    <h1>RAGHC Interactive Portal</h1>
+    <p class="vision">"Empowering Global Health Education"</p>
 </header>
 
 <div class="container">
     
     <div class="card">
-        <h2 style="margin-bottom: 25px; color: #5A5A5A;"><i class="fas fa-layer-group"></i> 5 Units Progress</h2>
-        <div class="unit-grid">
-            <div class="unit-item">
-                <div class="unit-header"><strong>1. PMAC</strong><span id="label-1">0%</span></div>
-                <div class="prog-bg"><div id="bar-1" class="prog-fill" style="background: #FFB7B2;"></div></div>
-            </div>
-            <div class="unit-item">
-                <div class="unit-header"><strong>2. CRM</strong><span id="label-2">0%</span></div>
-                <div class="prog-bg"><div id="bar-2" class="prog-fill" style="background: #FFDAC1;"></div></div>
-            </div>
-            <div class="unit-item">
-                <div class="unit-header"><strong>3. PR & Branding</strong><span id="label-3">0%</span></div>
-                <div class="prog-bg"><div id="bar-3" class="prog-fill" style="background: #B2E2F2;"></div></div>
-            </div>
-            <div class="unit-item">
-                <div class="unit-header"><strong>4. Reflection Hub</strong><span id="label-4">0%</span></div>
-                <div class="prog-bg"><div id="bar-4" class="prog-fill" style="background: #E2CCFF;"></div></div>
-            </div>
-            <div class="unit-item">
-                <div class="unit-header"><strong>5. Research</strong><span id="label-5">0%</span></div>
-                <div class="prog-bg"><div id="bar-5" class="prog-fill" style="background: #C1E1C1;"></div></div>
-            </div>
+        <h3 style="margin-bottom: 20px;"><i class="fas fa-chart-pie"></i> 5 Units Live Progress</h3>
+        
+        <div class="unit-item">
+            <div class="unit-info"><span>1. PMAC</span><span id="txt-1">0%</span></div>
+            <div class="prog-bg"><div id="bar-1" class="prog-fill" style="background: #FFB7B2;"></div></div>
+        </div>
+
+        <div class="unit-item">
+            <div class="unit-info"><span>2. CRM</span><span id="txt-2">0%</span></div>
+            <div class="prog-bg"><div id="bar-2" class="prog-fill" style="background: #FFDAC1;"></div></div>
+        </div>
+
+        <div class="unit-item">
+            <div class="unit-info"><span>3. PR & Branding</span><span id="txt-3">0%</span></div>
+            <div class="prog-bg"><div id="bar-3" class="prog-fill" style="background: #B2E2F2;"></div></div>
+        </div>
+
+        <div class="unit-item">
+            <div class="unit-info"><span>4. Reflection Hub</span><span id="txt-4">0%</span></div>
+            <div class="prog-bg"><div id="bar-4" class="prog-fill" style="background: #E2CCFF;"></div></div>
+        </div>
+
+        <div class="unit-item">
+            <div class="unit-info"><span>5. Research</span><span id="txt-5">0%</span></div>
+            <div class="prog-bg"><div id="bar-5" class="prog-fill" style="background: #C1E1C1;"></div></div>
         </div>
     </div>
 
-    <div class="stats">
-        <div><span class="stat-num" id="stat-people">0</span><small>Participants</small></div>
-        <div><span class="stat-num">2026</span><small>Current Year</small></div>
-        <div><span class="stat-num">100%</span><small>Passion</small></div>
+    <div class="card" style="border: 2px dashed var(--primary); background: #FFFBFB;">
+        <h3 style="color: #FF8A8A;"><i class="fas fa-pen-nib"></i> Update Status (กรอกเพื่ออัปเดตงาน)</h3>
+        <p style="font-size: 0.8rem; margin-bottom: 15px;">ข้อมูลจะถูกส่งไปยัง Google Sheets และอัปเดตหน้าเว็บทันที</p>
+        
+        <div class="input-group">
+            <select id="input-row">
+                <option value="1">PMAC</option>
+                <option value="2">CRM</option>
+                <option value="3">PR & Branding</option>
+                <option value="4">Reflection Hub</option>
+                <option value="5">Research</option>
+            </select>
+            <input type="number" id="input-value" placeholder="ใส่ตัวเลข 0-100">
+        </div>
+        <button class="btn-send" onclick="sendData()"><i class="fas fa-cloud-upload-alt"></i> อัปเดตข้อมูลเดี๋ยวนี้!</button>
+        <p id="msg" style="text-align: center; margin-top: 10px; font-size: 0.8rem;"></p>
     </div>
 
-    <div class="card">
-        <h3 style="margin-bottom: 20px;">Quick Access 🚀</h3>
-        <div class="btn-grid">
-            <a href="#" id="link-form" class="btn" style="background: #3498db;"><i class="fab fa-wpforms"></i> Join Our Unit</a>
-            <a href="#" id="link-canva" class="btn" style="background: #9b59b6;"><i class="fas fa-palette"></i> PR Canvas</a>
-        </div>
+    <div class="stats-grid">
+        <div class="stat-card"><h2 id="stat-p">0</h2><small>Participants</small></div>
+        <div class="stat-card"><h2>2026</h2><small>Year</small></div>
+        <div class="stat-card"><h2>100%</h2><small>Passion</small></div>
     </div>
 
 </div>
 
 <footer>
-    <p>Developing with heart for RAGHC • 2026</p>
+    <p>Handcrafted with ✨ for RAGHC Team</p>
 </footer>
 
 <script>
-    const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEd01amjo9pI1z7S_wE5N882TUqFF6z2H4trThvoZW4w4evHV5nmlx8QABWzJ2yKdHrqozTUhk4YJ2/pub?output=csv";
+    // 1. ลิงก์สำหรับอ่านข้อมูล (CSV)
+    const readUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEd01amjo9pI1z7S_wE5N882TUqFF6z2H4trThvoZW4w4evHV5nmlx8QABWzJ2yKdHrqozTUhk4YJ2/pub?output=csv";
+    
+    // 2. ลิงก์สำหรับส่งข้อมูล (Web App URL จาก Google Apps Script)
+    // *** ต้องเอา URL ที่ได้จากการ Deploy มาใส่ที่นี่ ***
+    const scriptUrl = "ใส่_URL_ที่ได้จาก_Apps_Script_ตรงนี้";
 
-    async function refreshPortal() {
+    // ฟังก์ชันอ่านข้อมูลมาโชว์ (Output)
+    async function loadData() {
         try {
-            const response = await fetch(csvUrl);
-            const data = await response.text();
-            const rows = data.split('\n').map(r => r.split(','));
+            const res = await fetch(readUrl);
+            const text = await res.text();
+            const rows = text.split('\n').map(r => r.split(','));
 
-            // บรรทัด 1-5: 5 Units
             for(let i=1; i<=5; i++) {
                 let val = rows[i][2].trim();
                 document.getElementById(`bar-${i}`).style.width = val + "%";
-                document.getElementById(`label-${i}`).innerText = val + "%";
+                document.getElementById(`txt-${i}`).innerText = val + "%";
             }
-
-            // บรรทัด 6: Stats
-            document.getElementById('stat-people').innerText = rows[6][2] + "+";
-
-            // บรรทัด 7-8: Links
-            document.getElementById('link-form').href = rows[7][2];
-            document.getElementById('link-canva').href = rows[8][2];
-
-        } catch (e) { console.log("Updating..."); }
+            document.getElementById('stat-p').innerText = rows[6][2] + "+";
+        } catch (e) { console.log("กำลังโหลด..."); }
     }
 
-    refreshPortal();
-    setInterval(refreshPortal, 60000); // อัปเดตทุกนาที
+    // ฟังก์ชันส่งข้อมูลเข้า Sheets (Input)
+    async function sendData() {
+        const row = document.getElementById('input-row').value;
+        const val = document.getElementById('input-value').value;
+        const msg = document.getElementById('msg');
+
+        if(!val || val < 0 || val > 100) {
+            alert("กรุณาใส่ตัวเลข 0-100 นะค๊าา");
+            return;
+        }
+
+        msg.innerText = "กำลังส่งข้อมูล... 🚀";
+        
+        try {
+            await fetch(scriptUrl, {
+                method: "POST",
+                mode: "no-cors",
+                cache: "no-cache",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ unitRow: row, progress: val })
+            });
+            
+            msg.style.color = "green";
+            msg.innerText = "อัปเดตสำเร็จ! รอสักครู่ให้หน้าเว็บรีเฟรชข้อมูลนะคะ ✨";
+            setTimeout(loadData, 2000); // โหลดข้อมูลใหม่หลังจากส่ง 2 วินาที
+        } catch (e) {
+            msg.style.color = "red";
+            msg.innerText = "อุ๊ย! มีบางอย่างผิดพลาด ลองตรวจสอบ Web App URL นะคะ";
+        }
+    }
+
+    loadData();
+    setInterval(loadData, 30000); // อัปเดตหน้าจอทุก 30 วินาที
 </script>
+
 </body>
 </html>
