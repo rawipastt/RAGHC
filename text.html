@@ -3,217 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAGHC Portal | Complete Best Version</title>
+    <title>RAGHC Portal | Management Hub</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Kanit', sans-serif; background-color: #f8fafc; }
-        .unit-card { transition: all 0.3s ease; }
-        .unit-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
-    </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900">
 
-    <div class="bg-slate-900 text-white py-2 text-[10px] font-bold uppercase tracking-widest text-center">
-        <div class="max-w-7xl mx-auto flex justify-center gap-8 px-4">
-            <span><i class="fas fa-users text-blue-400 mr-2"></i> Next Assembly: <span class="text-slate-400 italic">20 APR</span></span>
-            <span><i class="fas fa-clipboard-list text-emerald-400 mr-2"></i> Next Board: <span class="text-slate-400 italic">15 APR</span></span>
-        </div>
+    <div class="bg-slate-900 text-white py-2 text-center text-[10px] font-bold uppercase tracking-widest">
+        Next Assembly: 20 APR | Next Board: 15 APR
     </div>
 
-    <div class="bg-blue-600 text-white py-4">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <i class="fas fa-video opacity-50"></i>
-                <h4 class="font-bold text-sm uppercase italic">Meeting Command Center</h4>
-            </div>
-            <div class="flex gap-2">
-                <a href="URL_JOIN" class="bg-white text-blue-600 px-5 py-2 rounded-full text-[10px] font-bold uppercase italic">Join Live</a>
-                <a href="URL_MINUTES" class="bg-blue-800 text-white px-5 py-2 rounded-full text-[10px] font-bold uppercase italic">Minutes Drive</a>
-            </div>
-        </div>
-    </div>
-
-    <header class="bg-gradient-to-br from-blue-600 to-blue-400 text-white pt-20 pb-16 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="bg-white/20 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/30 italic">Research and Global Health Club</span>
-            <h1 class="text-4xl md:text-5xl font-black mt-8 mb-4 tracking-tight leading-tight italic">Driving Innovation,<br>Impacting Global Health</h1>
-            <p class="text-blue-50 text-sm md:text-base opacity-90 font-medium">ชมรมที่มุ่งเน้นการวิจัยและการพัฒนาศักยภาพเพื่อยกระดับสุขภาพระดับโลก</p>
-        </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-6 py-20 space-y-24">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-center text-3xl font-black uppercase italic mb-12 tracking-tighter">Management Hub</h2>
         
-        <section id="units">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-800 italic uppercase">Specialized Units</h2>
-                <div class="h-1.5 w-16 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 flex flex-col h-full">
-                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-book-open"></i></div>
-                    <h4 class="font-bold text-xl text-slate-800 mb-2 italic">Global Health Education</h4>
-                    <p class="text-xs text-slate-400 mb-10 leading-relaxed font-medium">พัฒนาสื่อการสอนและเผยแพร่ความรู้ด้านสุขภาวะระดับโลก</p>
-                    <div class="mt-auto grid grid-cols-2 gap-3">
-                        <a href="#" class="py-3 bg-slate-900 text-white rounded-xl text-[9px] font-black text-center uppercase italic">Overview</a>
-                        <a href="#" class="py-3 bg-blue-600 text-white rounded-xl text-[9px] font-black text-center uppercase italic">Google Drive</a>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center text-xl">
+                        <i class="fas fa-handshake"></i>
                     </div>
+                    <h3 class="font-bold text-xl">External CRM</h3>
                 </div>
-
-                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 flex flex-col h-full">
-                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-map-marker-alt"></i></div>
-                    <h4 class="font-bold text-xl text-slate-800 mb-2 italic">Border Health</h4>
-                    <p class="text-xs text-slate-400 mb-10 leading-relaxed font-medium">Fieldwork และการส่งเสริมสุขภาวะในพื้นที่ชายขอบ</p>
-                    <div class="mt-auto grid grid-cols-2 gap-3">
-                        <a href="#" class="py-3 bg-slate-900 text-white rounded-xl text-[9px] font-black text-center uppercase italic">Overview</a>
-                        <a href="#" class="py-3 bg-blue-600 text-white rounded-xl text-[9px] font-black text-center uppercase italic">Google Drive</a>
-                    </div>
+                <div class="bg-slate-50 p-4 rounded-2xl mb-6">
+                    <p class="text-xs font-bold text-slate-500 uppercase">Current Partners</p>
+                    <p class="text-xl font-bold text-blue-600">12 Organizations</p>
                 </div>
-
-                <div class="unit-card bg-white p-8 rounded-[2.5rem] border border-slate-100 flex flex-col h-full">
-                    <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-6 text-xl shadow-inner"><i class="fas fa-award"></i></div>
-                    <h4 class="font-bold text-xl text-slate-800 mb-2 italic">PMAC 2026</h4>
-                    <p class="text-xs text-slate-400 mb-10 leading-relaxed font-medium">Prince Mahidol Award Conference Coordination</p>
-                    <div class="mt-auto grid grid-cols-2 gap-3">
-                        <a href="#" class="py-3 bg-slate-900 text-white rounded-xl text-[9px] font-black text-center uppercase italic">Overview</a>
-                        <a href="#" class="py-3 bg-blue-600 text-white rounded-xl text-[9px] font-black text-center uppercase italic">Google Drive</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="external" class="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-12">
-            <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm relative overflow-hidden flex flex-col">
-                <div class="flex items-center gap-5 mb-10">
-                    <div class="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg"><i class="fas fa-handshake"></i></div>
-                    <div>
-                        <h3 class="font-bold text-2xl tracking-tighter">External CRM</h3>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Partner Database</p>
-                    </div>
-                </div>
-                <div class="space-y-4 mb-10">
-                    <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl border border-slate-100 italic">
-                        <span class="text-sm font-semibold">Current Partners</span>
-                        <span class="text-blue-600 font-bold">12 Orgs</span>
-                    </div>
-                    <a href="URL_CRM_SHEET" target="_blank" class="block w-full py-4 bg-slate-900 text-white rounded-2xl text-[10px] font-bold tracking-widest uppercase text-center hover:bg-slate-800 transition shadow-xl italic">Access CRM Spreadsheet</a>
-                </div>
-
-                <div class="mt-auto pt-6 border-t border-slate-100">
-                    <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 italic">PR Resources</h4>
-                    <div class="grid grid-cols-2 gap-3">
-                        <a href="URL_SLIDE" class="flex items-center gap-2 p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition border border-transparent hover:border-blue-200">
-                            <i class="fas fa-file-powerpoint text-amber-500"></i>
-                            <span class="text-[9px] font-bold italic uppercase">Slide Template</span>
-                        </a>
-                        <a href="URL_LOGO" class="flex items-center gap-2 p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition border border-transparent hover:border-blue-200">
-                            <i class="fas fa-vector-square text-blue-600"></i>
-                            <span class="text-[9px] font-bold italic uppercase">Logo Assets</span>
-                        </a>
-                    </div>
-                </div>
+                <a href="#" class="block w-full py-4 bg-slate-900 text-white text-center rounded-2xl font-bold text-xs uppercase italic shadow-lg">Access CRM Spreadsheet</a>
             </div>
 
-            <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-200 flex flex-col">
-                <div class="flex items-center justify-between mb-8">
-                    <div>
-                        <h3 class="font-bold text-2xl italic">PR Production Hub</h3>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Request & Status Tracking</p>
+            <div class="bg-[#0f172a] p-8 rounded-[2.5rem] shadow-2xl text-white flex flex-col">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-xl shadow-lg shadow-blue-500/20">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="font-bold text-xl italic text-white">PR Production Hub</h3>
                     </div>
-                    <a href="URL_GOOGLE_FORM_PR" target="_blank" class="bg-rose-500 text-white px-6 py-3 rounded-2xl text-[11px] font-bold shadow-lg shadow-rose-200 hover:scale-105 transition flex items-center gap-2 italic uppercase">
-                        <i class="fas fa-plus-circle"></i> Request PR
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-inner flex flex-col min-h-[350px]">
-                    <div class="bg-slate-100 px-6 py-3 flex justify-between items-center border-b border-slate-200">
-                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest italic animate-pulse"><i class="fas fa-sync-alt mr-1"></i> Live Work-Flow</span>
-                        <a href="URL_SPREADSHEET_PR_ADMIN" target="_blank" class="text-[9px] font-bold text-blue-600 underline italic">Admin Edit</a>
-                    </div>
-                    
-                    <div id="pr-status-list" class="divide-y divide-slate-100 overflow-y-auto">
-                        <div class="p-10 text-center opacity-30 text-xs italic">Syncing PR Database...</div>
-                    </div>
+                    <a href="#" class="bg-rose-500 px-4 py-2 rounded-xl text-[10px] font-bold uppercase">Request PR</a>
                 </div>
                 
-                <p class="mt-6 text-[9px] text-slate-400 italic text-center leading-relaxed">
-                    *ทีม PR สามารถแก้สถานะงานได้ใน Google Sheet ข้อมูลจะอัปเดตอัตโนมัติ*
-                </p>
+                <div class="bg-white/5 rounded-3xl border border-white/10 p-6 flex-grow min-h-[200px]">
+                    <p class="text-[9px] font-bold text-blue-400 uppercase tracking-widest mb-4">
+                        <i class="fas fa-sync-alt fa-spin mr-1"></i> Live Work-Flow
+                    </p>
+                    <div class="text-center py-10 opacity-20 italic text-xs uppercase tracking-widest">
+                        Syncing Database...
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
-    <footer class="bg-white border-t border-slate-100 py-12 text-center">
-        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.4em] italic leading-loose">
-            © 2026 Ramathibodi Global Health Studies Club<br>
-            Empowering Students Through Global Community
-        </p>
-    </footer>
-
-    <script>
-        const CSV_URL = 'ใส่_URL_CSV_ที่นี่'; 
-
-        async function fetchPRData() {
-            try {
-                const response = await fetch(CSV_URL);
-                const data = await response.text();
-                // กรองแถวที่เป็นช่องว่าง และป้องกันการดึง Code CSS เข้ามา
-                const rows = data.split('\n').filter(row => row.trim() !== "").slice(1); 
-                const list = document.getElementById('pr-status-list');
-                
-                if (rows.length === 0) {
-                    list.innerHTML = '<div class="p-10 text-center opacity-30 italic text-xs">No active requests found.</div>';
-                    return;
-                }
-
-                list.innerHTML = ''; 
-
-                rows.forEach(row => {
-                    const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-                    if (cols.length < 2) return;
-                    
-                    // ป้องกันการดึง CSS มาโชว์ (ถ้าคอลัมน์แรกมีปีกกา { ให้ข้าม)
-                    if (cols[0].includes('{')) return;
-
-                    const task = cols[0].replace(/"/g, '');
-                    const status = cols[1] ? cols[1].replace(/"/g, '').trim() : "Pending";
-                    const req = cols[2] ? cols[2].replace(/"/g, '').trim() : "RAGHC Team";
-                    const link = cols[3] ? cols[3].replace(/"/g, '').trim() : "#";
-                    
-                    let statusClass = "bg-slate-100 text-slate-500";
-                    let rowBg = "";
-                    if (status === "In Progress") statusClass = "bg-amber-100 text-amber-600";
-                    if (status === "Finished") {
-                        statusClass = "bg-emerald-100 text-emerald-600";
-                        rowBg = "bg-emerald-50/30";
-                    }
-
-                    list.innerHTML += `
-                        <div class="p-5 flex flex-col gap-3 ${rowBg} transition duration-300">
-                            <div class="flex justify-between items-start">
-                                <span class="text-xs font-bold text-slate-800">${task}</span>
-                                <span class="${statusClass} text-[8px] font-black px-2 py-1 rounded-md uppercase tracking-tighter">${status}</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                ${status === "Finished" ? 
-                                    `<a href="${link}" target="_blank" class="text-[10px] text-blue-600 font-bold hover:underline italic">
-                                        <i class="fab fa-instagram mr-1"></i> คลิกดูโพสต์/ดาวน์โหลดสื่อที่นี่
-                                     </a>` : 
-                                    `<span class="text-[10px] text-slate-400 italic leading-none">Requester: ${req}</span>`
-                                }
-                                ${status === "Finished" ? `<span class="text-[9px] text-slate-400">Done</span>` : `<div class="w-4 h-4 rounded-full bg-slate-200 flex items-center justify-center text-[8px] text-slate-500 font-bold italic">P</div>`}
-                            </div>
-                        </div>`;
-                });
-            } catch (e) {
-                console.error("Sync Error:", e);
-            }
-        }
-
-        fetchPRData();
-        setInterval(fetchPRData, 120000); // อัปเดตทุก 2 นาที
-    </script>
 </body>
 </html>
